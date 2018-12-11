@@ -1,0 +1,14 @@
+testDongRong (__main__.GloryRoad) ... FAIL
+
+======================================================================
+FAIL: testDongRong (__main__.GloryRoad)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:/webderiver/test_dongrong/dongrong.py", line 20, in testDongRong
+    assert u"wangg" in self.driver.page_source,"页面中不存在的元素"
+AssertionError: 页面中不存在的元素
+
+----------------------------------------------------------------------
+Ran 1 test in 13.080s
+
+FAILED (failures=1)
