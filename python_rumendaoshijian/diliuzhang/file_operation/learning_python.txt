@@ -1,0 +1,3 @@
+In Python you can :  readline()
+In Python you can : rstrp()
+In Python you can : strp()

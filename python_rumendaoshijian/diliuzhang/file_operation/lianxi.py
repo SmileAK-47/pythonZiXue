@@ -694,8 +694,8 @@ favorite_languages['wang'] = 'java'
 
 for k,v in favorite_languages.items():
     print(k +" " + v)
-'''
 
+#--------------------------------------------------------------------------
 # 9-14  骰子：模块 random 包含以各种方式生成随机数的函数，其中的 randint() 返回
 # 一个位于指定范围内的整数，例如，下面的代码返回一个 1~6内的整数：
 # from random import randint
@@ -739,3 +739,32 @@ print('---20----')
 for i  in range(20):
     doo.roll_die20()
 
+
+#-------------------------------------------------------------------------
+# 10-1 Python  学习笔记：在文本编辑器中新建一个文件，写几句话来总结一下你至
+# 此学到的 Python知识，其中每一行都以“In Python you can”打头。将这个文件命名为
+# learning_python.txt，并将其存储到为完成本章练习而编写的程序所在的目录中。编写一
+# 个程序，它读取这个文件，并将你所写的内容打印三次：第一次打印时读取整个文件；
+# 第二次打印时遍历文件对象；第三次打印时将各行存储在一个列表中，再在 with 代码
+# 块外打印它们。
+filename = 'G:\\webderiver\\python_rumendaoshijian\\diliuzhang\\file_operation\\learning_python.txt'
+with open(filename) as file_object:
+    read = file_object.read()
+    print(read)
+with open(filename) as file_object:
+    for line in file_object:
+        print(line.rstrip())
+
+with open(filename) as file_object:
+    lines = file_object.readlines()
+for line in lines:
+    print(line.strip())
+
+'''
+# 10-2 C  语言学习笔记：可使用方法 replace() 将字符串中的特定单词都替换为另一
+# 个单词。下面是一个简单的示例，演示了如何将句子中的 'dog' 替换为 'cat' ：
+# >>>  message = "I really like dogs."
+# >>>  message.replace('dog', 'cat')
+# 'I really like cats.'
+# 读取你刚创建的文件 learning_python.txt中的每一行，将其中的 Python都替换为另
+# 一门语言的名称，如 C。将修改后的各行都打印到屏幕上。

@@ -6,6 +6,18 @@ with open(filename) as file_object:
 pi_string = ''
 for line in lins:
     pi_string += line.strip()
-print(pi_string)
-print(len(pi_string))
 
+birthday = input("Enter your birthday in the form mmddyy: ")
+
+
+if birthday in pi_string:
+    print("Your birthady appears in the first million digits of pi")
+
+else:
+    print("Your birthday does not appera in the first million gigitsios pi")
+
+
+# print(pi_string)
+# print(len(pi_string))
+#
+# print(pi_string[:50]+'...')
