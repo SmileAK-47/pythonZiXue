@@ -760,7 +760,7 @@ with open(filename) as file_object:
 for line in lines:
     print(line.strip())
 
-'''
+#-----------------------------------------------
 # 10-2 C  语言学习笔记：可使用方法 replace() 将字符串中的特定单词都替换为另一
 # 个单词。下面是一个简单的示例，演示了如何将句子中的 'dog' 替换为 'cat' ：
 # >>>  message = "I really like dogs."
@@ -768,3 +768,50 @@ for line in lines:
 # 'I really like cats.'
 # 读取你刚创建的文件 learning_python.txt中的每一行，将其中的 Python都替换为另
 # 一门语言的名称，如 C。将修改后的各行都打印到屏幕上。
+filname = 'learning.txt'
+with open(filname,'a') as file_object:
+    file_object.write("One=In C you can 1\n")
+    file_object.write("Two=In C you can 2\n")
+    file_object.write("there=In C you can 3\n")
+
+with open(filname)as file_object:
+    lens = file_object.readlines()
+    for line in lens:
+        print(line.rstrip().replace('C','python'))
+------------------------------------------------------------------
+
+
+
+# 10-3  访客：编写一个程序，提示用户输入其名字；用户作出响应后，将其名字写
+# 入到文件 guest.txt中。
+filename = 'guest.txt'
+with open(filename,'w') as file_object:
+    name = input("place enter name:")
+    file_object.write(name)
+
+#-----------------------------------------------------------------------------
+# 10-4  访客名单：编写一个 while 循环，提示用户输入其名字。用户输入其名字后，
+# 在屏幕上打印一句问候语，并将一条访问记录添加到文件 guest_book.txt 中。确保这个
+# 文件中的每条记录都独占一行。
+filename = 'guest_book.txt'
+while True:
+    with open(filename,'a')as file_object:
+        naem = input("place enter name:")
+        thought = input("place gan yan:")
+        if name == 'quit'
+            break
+        file_object.write('name:'+naem+"\n")
+        file_object.write('gan yan ：'+thought+'\n')
+        print('thanks')
+
+'''
+# 10-5  关于编程的调查：编写一个 while 循环，询问用户为何喜欢编程。每当用户输
+# 入一个原因后，都将其添加到一个存储所有原因的文件中。
+filename = 'question.txt'
+while True:
+    your_reason = input('why you like :')
+    if your_reason == 'q':
+        break
+    else:
+        with open(filename,'a') as file_object:
+            file_object.write('your:'+your_reason+'\n')
