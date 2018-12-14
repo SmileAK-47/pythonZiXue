@@ -1,0 +1,1 @@
+The file alice.txt has about 29461 words.
