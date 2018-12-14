@@ -804,7 +804,7 @@ while True:
         file_object.write('gan yan ：'+thought+'\n')
         print('thanks')
 
-'''
+#-----------------------------------------------------------------------------
 # 10-5  关于编程的调查：编写一个 while 循环，询问用户为何喜欢编程。每当用户输
 # 入一个原因后，都将其添加到一个存储所有原因的文件中。
 filename = 'question.txt'
@@ -815,3 +815,91 @@ while True:
     else:
         with open(filename,'a') as file_object:
             file_object.write('your:'+your_reason+'\n')
+#-----------------------------------------------------------------------------
+# 10-6  加法运算：提示用户提供数值输入时，常出现的一个问题是，用户提供的是
+# 文本而不是数字。在这种情况下，当你尝试将输入转换为整数时，将引发 TypeError 异
+# 常。编写一个程序，提示用户输入两个数字，再将它们相加并打印结果。在用户输入的
+# 任何一个值不是数字时都捕获 TypeError 异常，并打印一条友好的错误消息。对你编写
+# 的程序进行测试：先输入两个数字，再输入一些文本而不是数字。
+
+while True:
+    num1 = (input("place enter number 1 :"))
+    nmu2 = (input("place enter number 2 :"))
+    try:
+        count_number = int(num1) + int(nmu2)
+        print(count_number)
+    except ValueError:
+        print("place enter number not word\n")
+
+#-----------------------------------------------------------------------------
+# 10-7  加法计算器：将你为完成练习 10-6 而编写的代码放在一个 while 循环中，让
+# 用户犯错（输入的是文本而不是数字）后能够继续输入数字。
+while True:
+    num1 = (input("place enter number 1 :"))
+    nmu2 = (input("place enter number 2 :"))
+    try:
+        count_number = int(num1) + int(nmu2)
+        print(count_number)
+    except ValueError:
+        pass
+
+#-----------------------------------------------------------------------------
+# 10-8  猫和狗：创建两个文件 cats.txt和 dogs.txt，在第一个文件中至少存储三只猫的
+# 名字，在第二个文件中至少存储三条狗的名字。编写一个程序，尝试读取这些文件，并
+# 将其内容打印到屏幕上。将这些代码放在一个 try-except 代码块中，以便在文件不存
+# 在时捕获 FileNotFound 错误，并打印一条友好的消息。将其中一个文件移到另一个地
+# 方，并确认 except 代码块中的代码将正确地执行。
+
+def red_name(filename):
+    try:
+        with open(filename)as f_object:
+            read_file = f_object.read()
+            print(read_file)
+    except FileNotFoundError:
+        print("place accent file wehere ")
+
+
+names = ['cats.txt','dogs.txt']
+for name in names:
+
+#-----------------------------------------------------------------------------
+
+# 10-9  沉默的猫和狗：修改你在练习 10-8中编写的 except 代码块，让程序在文件不
+# 存在时一言不发。
+
+def red_name(filename):
+    try:
+        with open(filename)as f_object:
+            read_file = f_object.read()
+            print(read_file)
+    except FileNotFoundError:
+        pass
+
+names = ['cats.txt','dogs.txt']
+for name in names:
+    red_name(name)
+    red_name(name)
+ '''
+# 10-10  常见单词：访问项目 Gutenberg（http://gutenberg.org/），并找一些你想分析的
+# 图书。下载这些作品的文本文件或将浏览器中的原始文本复制到文本文件中。
+# 你可以使用方法 count() 来确定特定的单词或短语在字符串中出现了多少次。例如，
+# 下面的代码计算 'row' 在一个字符串中出现了多少次：
+# >>>  line = "Row, row, row your boat"
+# >>>  line.count('row')
+# 2
+# >>>  line.lower().count('row')
+# 3
+# 请注意，通过使用 lower() 将字符串转换为小写，可捕捉要查找的单词出现的所有
+# 次数，而不管其大小写格式如何。
+# 编写一个程序，它读取你在项目 Gutenberg 中获取的文件，并计算单词 'the' 在 每
+# 个文件中分别出现了多少次。
+def content_x(filename):
+    try:
+        with open(filename) as f_obj:
+            content = f_obj.read()
+            print(content)
+            print(content.lower().count('is'))
+    except FileNotFoundError:
+        print("文件不存在")
+filename = 'moby_dick.txt'
+content_x(filename)
