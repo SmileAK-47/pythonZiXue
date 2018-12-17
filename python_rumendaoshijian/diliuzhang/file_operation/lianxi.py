@@ -798,7 +798,7 @@ while True:
     with open(filename,'a')as file_object:
         naem = input("place enter name:")
         thought = input("place gan yan:")
-        if name == 'quit'
+        if name == 'quit'：
             break
         file_object.write('name:'+naem+"\n")
         file_object.write('gan yan ：'+thought+'\n')
@@ -879,7 +879,7 @@ names = ['cats.txt','dogs.txt']
 for name in names:
     red_name(name)
     red_name(name)
- '''
+#----------------------------------------------------------------------------
 # 10-10  常见单词：访问项目 Gutenberg（http://gutenberg.org/），并找一些你想分析的
 # 图书。下载这些作品的文本文件或将浏览器中的原始文本复制到文本文件中。
 # 你可以使用方法 count() 来确定特定的单词或短语在字符串中出现了多少次。例如，
@@ -903,3 +903,39 @@ def content_x(filename):
         print("文件不存在")
 filename = 'moby_dick.txt'
 content_x(filename)
+#---------------------------------------------------------------------------------------
+ '''
+# 10-11  喜欢的数字：编写一个程序，提示用户输入他喜欢的数字，并使用
+# json.dump() 将这个数字存储到文件中。再编写一个程序，从文件中读取这个值，并打
+# 印消息“I know your favorite number! It’s _____.”。
+import json
+def like_number():
+    filename = 'favourite.json'
+    nmuber = input("plece enter like number:")
+    with open(filename,'w')as f_obj:
+        json.dump(nmuber,f_obj)
+        like = json.load(f_obj)
+        return like
+def read_number():
+    filename = 'favourite.json'
+    try:
+        with open(filename)as f_obj:
+            like = json.load(f_obj)
+            print("I know your favorite number! It’s _____."+like)
+    except FileNotFoundError:
+        like = like_number()
+
+        print("as+"+like+"asd ")
+read_number()
+
+
+# 10-12  记住喜欢的数字：将练习 10-11 中的两个程序合而为一。如果存储了用户喜
+# 欢的数字，就向用户显示它，否则提示用户输入他喜欢的数字并将其存储到文件中。运
+# 行这个程序两次，看看它是否像预期的那样工作。
+
+
+# 10-13  验证用户：最后一个 remember_me.py版本假设用户要么已输入其用户名，要
+# 么是首次运行该程序。我们应修改这个程序，以应对这样的情形：当前和最后一次运行
+# 该程序的用户并非同一个人。
+# 为此，在 greet_user() 中打印欢迎用户回来的消息前，先询问他用户名是否是对的。
+# 如果不对，就调用 get_new_username() 让用户输入正确的用户名。
